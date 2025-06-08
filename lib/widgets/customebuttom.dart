@@ -11,27 +11,25 @@ class Customebuttom extends StatelessWidget {
     required this.color,
     required this.onTap,
   });
- 
+
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: onTap,
       elevation: 2,
-    highlightColor: Colors.transparent,
-    splashColor: Colors.transparent,
-    highlightElevation: 10,
-    
+      highlightColor: Colors.transparent,
+      splashColor: Colors.transparent,
+      highlightElevation: 10,
+      minWidth: MediaQuery.of(context).size.width,
       color: color,
       height: 50,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-    
-      minWidth: double.infinity,
       child: Text(
         text,
         style: TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.bold,
-          fontSize: 18,
+          fontSize: 20,
         ),
       ),
     );

@@ -7,32 +7,31 @@ class AddNoteBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 500,
-      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 14),
-      child: Column(
-        children: [
-          CustomTextfileds(
-            hintext: "Title",
-            inputType: TextInputType.text,
-            colorborder: Color(0xff8A8A8A),
-            colorhint: Color.fromARGB(255, 30, 95, 85), maxline: 1,
-          ),
-          CustomTextfileds(
-            hintext: "Content",
-            inputType: TextInputType.multiline,
-            colorborder: Color(0xff8A8A8A),
-            colorhint: Color.fromARGB(255, 30, 95, 85), maxline: 6,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 30),
-            child: Customebuttom(
-              text: "text",
-              color: Color.fromARGB(255, 30, 95, 85),
-              onTap: () {},
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 16),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            CustomTextfileds(
+              hintext: "Title",
+              inputType: TextInputType.text,
+              colorborder: Color(0xff8A8A8A),
+              colorhint: Color.fromARGB(255, 30, 95, 85), maxline: 1,
             ),
-          ),
-        ],
+            
+            CustomTextfileds(
+              hintext: "Content",
+              inputType: TextInputType.multiline,
+              colorborder: Color(0xff8A8A8A),
+              colorhint: Color.fromARGB(255, 30, 95, 85), maxline: 6,
+            ),
+            SizedBox(
+              height: 60,
+            ),
+            Customebuttom(text: "Add", color: Color.fromARGB(255, 30, 95, 85), onTap: (){}),
+            SizedBox(height: 8,)
+          ],
+        ),
       ),
     );
   }

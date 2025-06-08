@@ -5,14 +5,15 @@ import 'package:google/widgets/list_notes_view_body.dart';
 
 class NotesView extends StatelessWidget {
   const NotesView({super.key});
+  static String id = "NotesView";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      primary: true,
-      body: Column(children: [CustomAppBar(),
+      body: Column(children: [CustomAppBar(title: 'Notes', icon: Icon(Icons.search),),
        ListNotesViewBody()]),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Color.fromARGB(255, 30, 95, 85),
         onPressed: () {
           showModalBottomSheet(
             shape: RoundedRectangleBorder(
