@@ -13,16 +13,19 @@ class AddNoteBottomSheet extends StatelessWidget {
         children: [
           CustomTextfileds(
             labetext: "Title",
-            hintext: "Write a tilte",
-            inputType: TextInputType.text,
+            hintext: "Write a title",
+            inputType: TextInputType.text, color: Color.fromARGB(255, 30, 95, 85),
           ),
           CustomTextfileds(
             labetext: "Content",
             hintext: "Write a Content",
-            inputType: TextInputType.multiline,
+            inputType: TextInputType.multiline, color: Color.fromARGB(255, 30, 95, 85),
           ),
-          SizedBox(height: 50,),
-          Customebuttom(text: "text", color: Colors.green, onTap: () {}),
+
+          Padding(
+            padding: const EdgeInsets.only(top: 100),
+            child: Customebuttom(text: "text", color: Color.fromARGB(255, 30, 95, 85), onTap: () {}),
+          ),
         ],
       ),
     );

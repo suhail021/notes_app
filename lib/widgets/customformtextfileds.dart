@@ -4,6 +4,7 @@ class CustomTextfileds extends StatelessWidget {
   final String labetext;
   final String hintext;
   final TextInputType inputType;
+  final Color color;
   Function(String)? onchange;
   CustomTextfileds({
     super.key,
@@ -11,6 +12,7 @@ class CustomTextfileds extends StatelessWidget {
     this.onchange,
     required this.hintext,
     required this.inputType,
+    required this.color,
   });
 
   @override
@@ -21,16 +23,16 @@ class CustomTextfileds extends StatelessWidget {
         keyboardType: inputType,
         onChanged: onchange,
 
-        cursorColor: Colors.green,
-        style: TextStyle(color: Colors.green),
+        cursorColor: color,
+        style: TextStyle(color: color),
         maxLines: null,
 
         decoration: InputDecoration(
           hintText: hintext,
-          hintStyle: TextStyle(color: Colors.green),
+          hintStyle: TextStyle(color: color),
           labelText: labetext,
-          labelStyle: TextStyle(color: Colors.green),
-          focusColor: Colors.green,
+          labelStyle: TextStyle(color: color),
+          focusColor: color,
           contentPadding: EdgeInsets.all(15),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
