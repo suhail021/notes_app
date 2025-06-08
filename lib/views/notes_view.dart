@@ -22,8 +22,6 @@ class NotesView extends StatelessWidget {
         shape: CircleBorder(),
         child: Icon(Icons.add),
       ),
-
-
     );
   }
 }
