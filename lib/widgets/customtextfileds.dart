@@ -1,68 +1,67 @@
 import 'package:flutter/material.dart';
 
 class CustomTextfileds extends StatelessWidget {
-  final String labetext;
   final String hintext;
+  final int maxline;
   final TextInputType inputType;
-  final Color color;
+  final Color colorhint;
+  final Color colorborder;
   Function(String)? onchange;
   CustomTextfileds({
     super.key,
-    required this.labetext,
     this.onchange,
     required this.hintext,
     required this.inputType,
-    required this.color,
+ required this.colorborder, required this.colorhint, required this.maxline,
+    
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20, right: 10, left: 10),
+      padding: const EdgeInsets.only(top: 20),
       child: TextField(
         keyboardType: inputType,
         onChanged: onchange,
 
-        cursorColor: color,
-        style: TextStyle(color: color),
-        maxLines: null,
+        cursorColor: colorhint,
+        style: TextStyle(color: colorhint),
+        maxLines: maxline,
 
         decoration: InputDecoration(
           hintText: hintext,
-          hintStyle: TextStyle(color: color),
-          labelText: labetext,
-          labelStyle: TextStyle(color: color),
-          focusColor: color,
+          hintStyle: TextStyle(color: colorhint),
+          focusColor: colorborder,
           contentPadding: EdgeInsets.all(15),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
               width: 1,
-              color: Colors.white,
+              color: colorborder,
               style: BorderStyle.solid,
             ),
           ),
           errorBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              width: 2,
+              width: 2.5,
               color: Color(0xffC0331C),
               style: BorderStyle.solid,
             ),
           ),
           focusedErrorBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              width: 2,
+              width: 2.5,
               color: Color(0xffC0331C),
               style: BorderStyle.solid,
             ),
           ),
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              width: 1.8,
-              color: Colors.white,
+              width: 2.5,
+              color: colorborder,
               style: BorderStyle.solid,
             ),
           ),
-          hoverColor: Colors.white,
+          hoverColor: colorborder,
         ),
       ),
     );
