@@ -8,7 +8,7 @@ class AddNoteBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 16),
+      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
       child: SingleChildScrollView(
         child: Column(
           children: [
@@ -18,7 +18,7 @@ class AddNoteBottomSheet extends StatelessWidget {
               colorborder: Color(0xff8A8A8A),
               colorhint: Color.fromARGB(255, 30, 95, 85), maxline: 1,
             ),
-            
+            SizedBox(height: 10,),
             CustomTextfileds(
               hintext: "Content",
               inputType: TextInputType.multiline,
