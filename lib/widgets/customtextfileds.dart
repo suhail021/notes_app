@@ -6,26 +6,33 @@ class CustomTextfileds extends StatelessWidget {
   final TextInputType inputType;
   final Color colorhint;
   final Color colorborder;
-  Function(String)? onchange;
+  void Function(String?)? onSaved;
   CustomTextfileds({
     super.key,
-    this.onchange,
+    this.onSaved,
     required this.hintext,
     required this.inputType,
- required this.colorborder, required this.colorhint, required this.maxline,
-    
+    required this.colorborder,
+    required this.colorhint,
+    required this.maxline,
   });
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
       keyboardType: inputType,
-      onChanged: onchange,
-    
+      onSaved: onSaved,
+  validator: (value) {
+    if(value?.isEmpty ?? true){
+      return 'Field is required';
+    }else{
+      return null;
+    }
+  },
       cursorColor: colorhint,
       style: TextStyle(color: colorhint),
       maxLines: maxline,
-    
+
       decoration: InputDecoration(
         hintText: hintext,
         hintStyle: TextStyle(color: colorhint),
