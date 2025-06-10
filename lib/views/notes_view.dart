@@ -13,10 +13,13 @@ class NotesView extends StatelessWidget {
       body: Column(children: [CustomAppBar(title: 'Notes', icon: Icon(Icons.search),),
        ListNotesViewBody()]),
       floatingActionButton: FloatingActionButton(
+        
         backgroundColor: Color.fromARGB(255, 30, 95, 85),
         onPressed: () {
           showModalBottomSheet(
+            isScrollControlled: true,
             shape: RoundedRectangleBorder(
+              
               borderRadius: BorderRadius.circular(10)
             ),
             context: context, builder: (context){
