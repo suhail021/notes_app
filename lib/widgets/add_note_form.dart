@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:google/models/note_model.dart';
@@ -45,24 +44,29 @@ class _AddNoteFormState extends State<AddNoteForm> {
               suptitle = value;
             },
           ),
-          const SizedBox(height: 60),
-          Customebuttom(
-            text: "Add",
-            color: Color.fromARGB(255, 30, 95, 85),
-            onTap: () {
-              if (formkey.currentState!.validate()) {
-                formkey.currentState!.save();
-                var noteModel = NoteModel(
-                  title: title!,
-                  subtitle: suptitle!,
-                  date: DateTime.now().toString(),
-                  color: Colors.blue.value,
-                );
-                BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
-              } else {
-                autovalidateMode = AutovalidateMode.always;
-                setState(() {});
-              }
+          const SizedBox(height: 20),
+          BlocBuilder<AddNoteCubit, AddNoteState>(
+            builder: (context, state) {
+              return Customebuttom(
+                isLoading: state is AddNoteLoading ? true:false,
+                text: "Add",
+                color: Color.fromARGB(255, 30, 95, 85),
+                onTap: () {
+                  if (formkey.currentState!.validate()) {
+                    formkey.currentState!.save();
+                    var noteModel = NoteModel(
+                      title: title!,
+                      subtitle: suptitle!,
+                      date: DateTime.now().toString(),
+                      color: Colors.blue.value,
+                    );
+                    BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
+                  } else {
+                    autovalidateMode = AutovalidateMode.always;
+                    setState(() {});
+                  }
+                },
+              );
             },
           ),
           const SizedBox(height: 8),
