@@ -7,9 +7,11 @@ class CustomTextfileds extends StatelessWidget {
   final Color colorhint;
   final Color colorborder;
   void Function(String?)? onSaved;
+  void Function(String)? onChanged;
   CustomTextfileds({
     super.key,
     this.onSaved,
+    this.onChanged,
     required this.hintext,
     required this.inputType,
     required this.colorborder,
@@ -29,6 +31,7 @@ class CustomTextfileds extends StatelessWidget {
       return null;
     }
   },
+  onChanged: onChanged,
       cursorColor: colorhint,
       style: TextStyle(color: colorhint),
       maxLines: maxline,
