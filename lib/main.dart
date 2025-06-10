@@ -12,7 +12,7 @@ void main() async {
 
   Bloc.observer =SimpleBlocObserver();
   Hive.registerAdapter(NoteModelAdapter());
-  await Hive.openBox<NoteModel>(kNoteBox);
+   await Hive.openBox<NoteModel>(kNoteBox);
 
   runApp(NotesApp());
 }

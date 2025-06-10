@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:google/models/note_model.dart';
 import 'package:google/views/edit_note_view.dart';
 
 class NotesCard extends StatelessWidget {
-  const NotesCard({super.key});
-
+  const NotesCard({super.key, required this.note});
+ final NoteModel note ;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -11,11 +12,11 @@ class NotesCard extends StatelessWidget {
         Navigator.pushNamed(context, EditNoteView.id);
       },
       child: Container(
-        margin: EdgeInsets.only(bottom: 8, right: 15, left: 15),
+        margin: EdgeInsets.only(bottom: 8, ),
         padding: EdgeInsets.only(bottom: 20, left: 10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Color(0xff393939),
+          color: Color(note.color),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -25,7 +26,7 @@ class NotesCard extends StatelessWidget {
               title: Padding(
                 padding: EdgeInsets.only(bottom: 15, top: 20),
                 child: Text(
-                  "Flutter tips",
+                note.title,
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ),
@@ -33,7 +34,7 @@ class NotesCard extends StatelessWidget {
               subtitle: Padding(
                 padding: const EdgeInsets.only(right: 1, bottom: 8),
                 child: Text(
-                  "build youer Career with tharwat Samy",
+                 note.subtitle,
                   style: TextStyle(fontSize: 15),
                 ),
               ),
@@ -44,7 +45,7 @@ class NotesCard extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(right: 30),
-              child: Text("May 21.2025", style: TextStyle(fontSize: 14)),
+              child: Text(note.date, style: TextStyle(fontSize: 14)),
             ),
           ],
         ),

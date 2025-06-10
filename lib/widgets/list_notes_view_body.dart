@@ -12,23 +12,18 @@ class ListNotesViewBody extends StatefulWidget {
 }
 
 class _ListNotesViewBodyState extends State<ListNotesViewBody> {
-  void initState() {
-    BlocProvider.of<NotesCubitCubit>(context).fechAllNote();
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<NotesCubitCubit, NotesCubitState>(
       builder: (context, state) {
-        List<NoteModel> notes =
-            BlocProvider.of<NotesCubitCubit>(context).notes ?? [];
+        List<NoteModel> notes = BlocProvider.of<NotesCubitCubit>(context).notes ?? [];
         return Expanded(
           child: ListView.builder(
-            padding: EdgeInsets.only(top: 2),
-            itemCount: notes.length,
+            padding: EdgeInsets.only(top: 2,bottom: 40),
+            itemCount:  notes.length,
             itemBuilder: (context, index) {
-              return NotesCard();
+              return NotesCard(note: notes[index],);
             },
           ),
         );
