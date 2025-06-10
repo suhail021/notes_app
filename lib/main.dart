@@ -4,7 +4,6 @@ import 'package:google/constants.dart';
 import 'package:google/cubits/notes_cubit/notes_cubit_cubit.dart';
 import 'package:google/models/note_model.dart';
 import 'package:google/simple_bloc_observer.dart';
-import 'package:google/views/edit_note_view.dart';
 import 'package:google/views/notes_view.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
