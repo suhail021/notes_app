@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google/constants.dart';
 import 'package:google/cubits/add_note_cubit/add_note_cubit.dart';
+import 'package:google/models/note_model.dart';
 import 'package:google/widgets/color_item.dart';
 
 class ColorsListView extends StatefulWidget {
@@ -47,3 +49,4 @@ class _ColorsListViewState extends State<ColorsListView> {
     );
   }
 }
+
