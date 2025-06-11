@@ -26,6 +26,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
       autovalidateMode: autovalidateMode,
       child: Column(
         children: [
+          SizedBox(height: 10,),
           CustomTextfileds(
             hintext: "Title",
             inputType: TextInputType.text,
@@ -48,6 +49,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             },
           ),
           const SizedBox(height: 20),
+
           ColorsListView(),
           const SizedBox(height: 20),
           BlocBuilder<AddNoteCubit, AddNoteState>(
@@ -80,3 +82,5 @@ class _AddNoteFormState extends State<AddNoteForm> {
     );
   }
 }
+
+
